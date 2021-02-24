@@ -18,7 +18,6 @@ type ItemListProps = {
 };
 
 const ItemList: FC<ItemListProps> = ({ listItems, ordered, setListItems }) => {
-	console.log(listItems);
 	return (
 		<>
 			{ordered ?
@@ -28,7 +27,7 @@ const ItemList: FC<ItemListProps> = ({ listItems, ordered, setListItems }) => {
 							setListItems(produce(listItems, newListItems => {
 								newListItems[index].complete = !newListItems[index].complete;
 							}))
-						}>
+						} className={item.complete ? 'itemCompleted' : 'itemIncomplete'} >
 							{item.name}
 						</span></li>
 					))}
@@ -40,7 +39,7 @@ const ItemList: FC<ItemListProps> = ({ listItems, ordered, setListItems }) => {
 							setListItems(produce(listItems, newListItems => {
 								newListItems[index].complete = !newListItems[index].complete;
 							}))
-						}>
+						} className={item.complete ? 'itemCompleted' : 'itemIncomplete'} >
 							{item.name}
 						</span></li>
 					))}

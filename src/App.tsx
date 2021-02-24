@@ -25,7 +25,6 @@ const App: FC = () => {
 
 	useEffect(() => {
 		localStorage.setItem(localStorageItemsKey, JSON.stringify(listItems));
-		console.log(listItems);
 	}, [listItems]);
 
 	useEffect(() => {
