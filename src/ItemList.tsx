@@ -23,25 +23,31 @@ const ItemList: FC<ItemListProps> = ({ listItems, ordered, setListItems }) => {
 			{ordered ?
 				<ol>
 					{listItems.map((item, index) => (
-						<li key={item.id}><span onClick={() =>
-							setListItems(produce(listItems, newListItems => {
-								newListItems[index].complete = !newListItems[index].complete;
-							}))
-						} className={item.complete ? 'itemCompleted' : 'itemIncomplete'} >
-							{item.name}
-						</span></li>
+						<li key={item.id}>
+							<span onClick={() =>
+								setListItems(produce(listItems, newListItems => {
+									newListItems[index].complete = !newListItems[index].complete;
+								}))
+							}
+								className={item.complete ? 'itemCompleted' : 'itemIncomplete'}
+							>
+								{item.name}
+							</span></li>
 					))}
 				</ol>
 				:
 				<ul>
 					{listItems.map((item, index) => (
-						<li key={item.id}><span onClick={() =>
-							setListItems(produce(listItems, newListItems => {
-								newListItems[index].complete = !newListItems[index].complete;
-							}))
-						} className={item.complete ? 'itemCompleted' : 'itemIncomplete'} >
-							{item.name}
-						</span></li>
+						<li key={item.id}>
+							<span onClick={() =>
+								setListItems(produce(listItems, newListItems => {
+									newListItems[index].complete = !newListItems[index].complete;
+								}))
+							}
+								className={item.complete ? 'itemCompleted' : 'itemIncomplete'}
+							>
+								{item.name}
+							</span></li>
 					))}
 				</ul>}
 		</>

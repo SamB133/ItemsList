@@ -5,4 +5,9 @@ button:hover {
 span.itemCompleted {
 	text-decoration: line-through;
 	text-decoration-color: red;
+	text-decoration-thickness: 1.5px;
+}
+
+span:hover {
+	cursor: pointer;
 }
