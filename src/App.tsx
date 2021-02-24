@@ -47,7 +47,7 @@ const App: FC = () => {
 			<div><button onClick={() => setOrdered(!ordered)} >Change List Type (Ordered or Unordered)</button></div>
 			<input type="text" ref={itemRef} onKeyPress={(e) => { if (e.key === 'Enter') addButtonRef.current?.click(); }} />
 			<button style={{ color: 'green' }} onClick={addItem} ref={addButtonRef} >Add Item to List</button>
-			<button style={{ color: 'red' }} >Delete Completed Items</button>
+			<button style={{ color: 'red' }} onClick={() => setListItems(listItems.filter(item => !item.complete))} >Delete Completed Items</button>
 			<div>You have {listItems.length} items in your list</div>
 			<ItemList listItems={listItems} ordered={ordered} setListItems={setListItems} />
 		</>
