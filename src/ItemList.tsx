@@ -18,37 +18,30 @@ type ItemListProps = {
 };
 
 const ItemList: FC<ItemListProps> = ({ listItems, ordered, setListItems }) => {
+	const arrayToList = () => {
+		return (listItems.map((item, index) => (
+			<li key={item.id}>
+				<span onClick={() =>
+					setListItems(produce(listItems, newListItems => {
+						newListItems[index].complete = !newListItems[index].complete;
+					}))
+				}
+					className={item.complete ? 'itemCompleted' : 'itemIncomplete'}
+				>
+					{item.name}
+				</span></li>
+		)))
+	};
+
 	return (
 		<>
 			{ordered ?
 				<ol>
-					{listItems.map((item, index) => (
-						<li key={item.id}>
-							<span onClick={() =>
-								setListItems(produce(listItems, newListItems => {
-									newListItems[index].complete = !newListItems[index].complete;
-								}))
-							}
-								className={item.complete ? 'itemCompleted' : 'itemIncomplete'}
-							>
-								{item.name}
-							</span></li>
-					))}
+					{arrayToList()}
 				</ol>
 				:
 				<ul>
-					{listItems.map((item, index) => (
-						<li key={item.id}>
-							<span onClick={() =>
-								setListItems(produce(listItems, newListItems => {
-									newListItems[index].complete = !newListItems[index].complete;
-								}))
-							}
-								className={item.complete ? 'itemCompleted' : 'itemIncomplete'}
-							>
-								{item.name}
-							</span></li>
-					))}
+					{arrayToList()}
 				</ul>}
 		</>
 	);
