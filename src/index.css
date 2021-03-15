@@ -17,6 +17,7 @@ li {
 	border-width: thin;
 	padding: 4px;
 	text-align: left;
+	margin-left: -45px;
 }
 
 ol,
