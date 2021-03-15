@@ -34,7 +34,7 @@ const ItemList: FC<ItemListProps> = ({ listItems, ordered, setListItems }) => {
 	};
 
 	return (
-		<>
+		<div className='centered'>
 			{ordered ?
 				<ol>
 					{arrayToList()}
@@ -43,7 +43,7 @@ const ItemList: FC<ItemListProps> = ({ listItems, ordered, setListItems }) => {
 				<ul>
 					{arrayToList()}
 				</ul>}
-		</>
+		</div>
 	);
 };
 

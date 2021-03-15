@@ -11,3 +11,20 @@ span.itemCompleted {
 span:hover {
 	cursor: pointer;
 }
+
+li {
+	border-bottom: solid;
+	border-width: thin;
+	padding: 4px;
+	text-align: left;
+}
+
+ol,
+ul {
+	list-style-position: inside;
+	display: inline-block;
+}
+
+.centered {
+	text-align: center;
+}
