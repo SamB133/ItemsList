@@ -17,12 +17,13 @@ const ListItem: FC<ItemListProps> = ({ item, onClickItem, onDeleteItem }) => {
 	const [viewDeleteButton, setViewDeleteButton] = useState(false);
 	const bind = useDrag(state => {
 		if (state.dragging && state.axis === 'x') {
-			if (state.direction[0] === -1)
+			if (state.direction[0] === -1) {
 				setViewDeleteButton(true);
-			if (state.direction[0] === 1)
+				setTimeout(setViewDeleteButton, 8000);
+			}
+			else if (state.direction[0] === 1) {
 				setViewDeleteButton(false);
-			//setViewDeleteButton(state.direction[0] === -1);
-			console.log('dragging');
+			}
 		}
 	})
 
