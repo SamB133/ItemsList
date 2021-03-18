@@ -29,7 +29,7 @@ const ListItem: FC<ItemListProps> = ({ item, onClickItem, onDeleteItem }) => {
 
 	return (
 		<li key={item.id} {...bind()}>
-			<span onClick={onClickItem} className={item.complete ? "itemCompleted text" : "itemIncomplete text"}  >
+			<span onClick={onClickItem} className={viewDeleteButton ? (item.complete ? "itemCompleted text spanWithDelete" : "itemIncomplete text spanWithDelete") : (item.complete ? "itemCompleted text" : "itemIncomplete text")}  >
 				{item.name}
 			</span>
 			{viewDeleteButton && <button className="singleDelete viewing" onClick={onDeleteItem}>Delete</button>}

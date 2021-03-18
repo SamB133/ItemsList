@@ -14,21 +14,26 @@ span:hover {
 
 span {
 	width: fit-content;
-	overflow-wrap: break-word;
 	max-width: 90%;
 	word-wrap: break-word;
 	display: inline-block;
 	vertical-align: middle;
+	padding: 0.3rem;
+	font-family: initial;
+}
+
+span.spanWithDelete {
+	max-width: 69%;
 }
 
 li {
 	border-bottom: solid;
 	border-width: thin;
-	padding: 0.5rem;
 	text-align: left;
-	width: 95%;
+	width: 82%;
 	white-space: normal;
-	margin-left: -1.5rem;
+	margin-right: 0;
+	font-family: initial;
 }
 
 ol,
@@ -36,6 +41,7 @@ ul {
 	list-style-position: inside;
 	display: inline-block;
 	width: 90%;
+	font-size: 16px;
 }
 
 .centered {
@@ -46,12 +52,11 @@ button.singleDelete {
 	background-color: red;
 	color: white;
 	border: none;
-	height: 100%;
+	width: auto;
 	float: right;
 	position: relative;
-	margin-right: -0.5rem;
-	padding: 0.81rem;
-	margin-top: -0.5rem;
+	margin: 0;
+	padding: 2%;
 }
 
 .buttonsInput {
