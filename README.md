@@ -3,4 +3,4 @@ A React Web App for keeping track of items and being able to mark them completed
 
 Created with React. 
 
-Use ```yarn start``` to start the program.
+Use ```yarn install``` to install all the dependencies and then use ```yarn start``` to start the program.
